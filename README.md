@@ -3,4 +3,4 @@ An online portfolio I created for my Web Development assignment. I used purely H
 **Note:** JS and external libraries were not allowed for my assignment so the portfolio is limited!
 
 # Check it out!
-katearevir.github.io
+https://katearevir.github.io
