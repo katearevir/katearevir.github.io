@@ -1,0 +1,370 @@
+@font-face {
+    font-family: 'Montserrat';
+    src: url('Montserrat-VariableFont_wght.ttf')
+}
+
+$baseColor: rosybrown;
+$hoverColor: rgb(116, 89, 89);
+$activeColor: rgb(94, 70, 70);
+
+body {
+    margin: 0;
+    background-color: rosybrown;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 100px;
+}
+
+#title{
+    position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); 
+        font-size: 50px;
+        text-shadow: 2px 2px gray;
+    
+  }
+  
+
+/*Footer styling*/
+.footer {
+    background-color: rgb(136, 96, 96);
+    text-align: center;
+    padding: 15px;
+    margin-top: 150px;
+}
+
+/*Navigation Bar styling*/
+#navbar { 
+    position: relative;
+    overflow: hidden;
+    background-color: rgb(136, 96, 96);
+
+        a {
+            float: left;
+            color: white;
+            text-align: center;
+            font-size: 14px;
+            padding: 14px 10px;
+            text-decoration: none;
+        }
+        
+        #logo {
+            text-align: center;
+            font-family: "Lucida Handwriting", cursive;
+            font-style: bold;
+            text-decoration: none;
+        }
+        
+        #pages {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            position: absolute;    
+            padding-left: 0px;
+            height: 40px;
+            width: 100%;
+
+
+            li a.active {
+                background-color: $activeColor;
+                height:40px;
+            }
+
+            li a:hover {
+                transition-duration: 0.4s;
+                background-color: $hoverColor;
+                height:40px;
+            }
+        }
+}
+
+
+
+/*Title/Header styling for pages other than homepage*/
+//Reference for centering image on text: https://www.w3schools.com/howto/howto_css_image_text.asp
+.header-image{
+    width: 100%;
+    filter: blur(1.5px);
+    height: 100%;
+}
+
+.header-container{
+    position: relative;
+    text-align: center;
+
+    > h1 {
+        position: absolute;
+        font-size: 28px;
+        background-color: rgba(148, 96, 96, 0.6);
+        border: 3px solid white;
+        padding: 2px;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+/*Divider after header in About, Courses, Hobbies, and Portfolio*/
+.divider {
+    border-top: 8px solid rgb(255, 255, 255);
+    border-radius: 5px;
+    width: 20%;
+}
+
+/*Image in homepage*/
+//Reference for fitting image https://www.w3schools.com/css/css3_object-fit.asp
+#main {
+    max-width: 100%;
+    object-fit: contain;
+    overflow: hidden;
+}
+
+/*Portfolio list styling*/
+.portList {
+    ul {
+        margin: 0px;
+        padding-left: 10%;
+        list-style-type: none;
+
+        a {
+            text-decoration: none;
+        }
+
+        h3,p {
+            color: white;
+        }
+
+        h3 {
+            text-align: center;
+            font-size: 25px;
+        }
+
+        li:hover {
+            transition-duration: 0.4s;
+            background-color: $hoverColor;
+        }
+
+        li img {
+            width: 100%;
+        }
+
+        li{
+            background-color:rgb(148, 110, 110);
+            width: 90%;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        }
+    }
+}
+
+/*Table Styling*/
+table {
+    margin-top: 10px;
+    width: 90%;
+    th {
+        background-color: rgb(163, 106, 106);
+    }
+    td {
+        background-color: rgb(121, 78, 88);
+    }
+}
+
+th, td {
+    padding: 10px;
+    border: 0px;
+}
+
+
+/*Flex Container used for Courses and Hobbies*/
+//Reference for item centering https://www.w3schools.com/css/css3_flexbox_container.asp
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .break {
+        flex-basis: 100%;
+        height: 0;
+      }
+    
+    > div {
+        width: 360px;
+        text-align: center;
+        img {
+            width: 100%;
+        }
+    }
+
+}
+
+/* mobile */
+@media screen and (max-width: 768px) {
+
+    #title{
+        top: 20%;
+        font-size: 40px;
+  }
+
+    #navbar{
+        #logo{
+            opacity: 0;
+        }
+    }
+    
+
+    /*Flex Container used for About*/
+    .flex-container-center {
+        flex-direction: column;
+        display: flex;
+        text-align: center;
+          
+        > div {
+            #profPic{
+                padding-top: 10px;
+                border-radius: 50%;
+            }
+            #intro{
+                font-size: 20px;
+            }
+
+            p{
+                vertical-align: middle;
+                font-size: 20px;
+            }
+
+
+            a{
+                color: white;
+                text-align: center;
+                font-size: 20px;
+                text-decoration: none;
+            }
+
+            img {
+                width: 80%;
+            }
+        }
+    }
+}
+
+/*widescreen*/
+@media screen and (min-width: 768px) {
+
+    #navbar {
+        a {
+            font-size: 16px;
+            padding: 14px 16px;
+        }
+    }
+
+    #title{
+        position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%); 
+            font-size: 50px;
+      }
+
+    #pages {
+        right: 0;
+    }
+
+    .header-container{
+        position: relative;
+        text-align: center;
+        > h1 {
+            top: 40%;
+            padding: 30px;
+            font-size: 40px;
+        }
+    }
+
+    th, td {
+        padding: 20px;
+    }
+
+    .portList {
+        ul {
+
+            li img {
+                padding: 8px;
+                float: left;
+                width: 30%;
+            }
+
+            li{
+                margin-top: 10px;
+                width: 90%;
+                overflow: auto;
+            }
+            p {
+                font-size: 20px;
+            }
+ 
+        }
+    }
+
+    .flex-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    
+        .break {
+            flex-basis: 100%;
+            height: 0;
+          }
+        
+        > div {
+            margin: 10px;
+            width: 560px;
+            text-align: center;
+            iframe {
+                width: 560px;
+            }
+        }
+    
+    }
+
+    /*Flex Container used for About*/
+    .flex-container-center {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    
+        > div {
+            width: 500px;
+            text-align: center;
+            #profPic{
+                padding-top: 10px;
+                border-radius: 50%;
+            }
+            #intro{
+                font-size: 18px;
+            }
+
+            a{
+                color: white;
+                text-align: center;
+                font-size: 20px;
+                text-decoration: none;
+            }
+
+            p{
+                text-align: center;
+                font-size: 20px;
+            }
+            img {
+                width: 400px;
+            }
+        }
+    }
+}
+
+
+

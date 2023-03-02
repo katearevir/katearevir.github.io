@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="css/site_style.css">
+</head>
+<body>
+    <!--navigation bar-->
+    <div id="navbar">
+        <div id="logo">
+            <a>kate rivera</a>
+        </div>
+
+        <ul id="pages">
+            <li><a href="home.html" class="active">Home</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </div>
+
+    <div>
+        <img id="main" src="images/gradient.jpg">
+        <div id="title">
+        </div>
+    </div>
+    
+
+    <div class="footer" style="margin:0;">
+        <p>Kate Rivera Portfolio</p>
+    </div>
+</body>
+
+<script>
+    //https://www.w3schools.com/howto/howto_js_typewriter.asp
+    var i = 0;
+    var txt = 'Welcome to my website!'; /* The text */
+    var speed = 50; /* The speed/duration of the effect in milliseconds */
+
+    function typeWriter() {
+        if (i < txt.length) {
+            document.getElementById("title").innerHTML += txt.charAt(i);
+            i++;
+            setTimeout(typeWriter, speed);
+        }
+    }
+
+    setTimeout(() => {  typeWriter(); }, 1500);
+    
+</script>
+</html>
